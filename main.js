@@ -8,7 +8,7 @@ async function run() {
   } catch(e) {
     core.setFailed(e.message);
   }
-  console.log(result);
+  console.log(`🕑 lead time: ${result}`);
   core.setOutput("lead-time", result);
 }
 
