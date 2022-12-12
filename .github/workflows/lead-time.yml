@@ -10,25 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Replace
+      - name: Find Lead Time
+        id: lead-time
+        uses: d-kanai/lead-time-action@main
+        env:
+          PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
+          RELEASE_BRANCH_NAME: main
+          REPOSITORY_NAME: ${{github.repository}}
+      - name: show lead-time output
+        run: echo "${{ steps.lead-time.outputs.lead-time }}"
+      - name: write history file
         run: |
           mkdir simple-lead-time-action
-          echo "# hello" >> simple-lead-time-action/README.txt
+          echo "| $(date +'%Y-%m-%d %H:%M') | ${{ steps.lead-time.outputs.lead-time }} |" >> simple-lead-time-action/README.md
       - name: Commit & Push
         uses: actions-js/push@v1.3
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API }}
-          message: "update by simple-lead-time-action"
+          message: "auto commit by simple-lead-time-action"
           author_email: "simple-lead-time-action"
           author_name: "simple-lead-time-action"
           branch: change
 
-        #      - name: Find Lead Time
-        #        id: lead-time
-        #        uses: d-kanai/lead-time-action@main
-        #        env:
-        #          PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
-        #          RELEASE_BRANCH_NAME: main
-        #          REPOSITORY_NAME: ${{github.repository}}
-        #      - name: show lead-time output
-        #        run: echo "${{ steps.lead-time.outputs.lead-time }}"
