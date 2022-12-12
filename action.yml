@@ -1,5 +1,5 @@
 name: "lead tiem action"
-
+author: "d-kanai"
 description: "use an Github Graphql API to calc Lead Time"
 
 outputs:
@@ -9,3 +9,6 @@ outputs:
 runs:
   using: "node12"
   main: "main.js"
+
+icon: "time"
+color: "green"
