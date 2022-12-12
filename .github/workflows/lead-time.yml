@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Replace
         run: |
-          echo "hello" >> test.txt
+          mkdir simple-lead-time-action
+          echo "# hello" >> simple-lead-time-action/README.txt
       - name: Commit & Push
         uses: actions-js/push@v1.3
         with:
