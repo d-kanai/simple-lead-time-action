@@ -37,13 +37,17 @@ const graphqlWithAuth = graphql.defaults({
 });
 
 async function getLeadTime() {
-  //const isDebug = process.argv[2] === 'debug' || false;
-  const { search } = await graphqlWithAuth(query);
-  //if (isDebug) {
-  //  console.dir(search, { depth: null });
-  //}
-  const closedDate = new Date(search.nodes[0].closedAt);
-  const firstCommitDate = new Date(search.nodes[0].commits.edges[0].node.commit.committedDate);
+  if(!process.env.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API) {
+    throw Error("it need to set env var 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
+  }
+  let res
+  try {
+    res = await graphqlWithAuth(query);
+  } catch(e) {
+    throw Error("Bad Credential 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
+  }
+  const closedDate = new Date(res.search.nodes[0].closedAt);
+  const firstCommitDate = new Date(res.search.nodes[0].commits.edges[0].node.commit.committedDate);
   const leadTimeHours = (closedDate - firstCommitDate) / 1000 / 60 / 60;
   const result = leadTimeHours.toString().substring(0, 3) + 'h'
   return result
