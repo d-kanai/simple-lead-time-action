@@ -28,7 +28,10 @@ jobs:
             echo 'skip init file'
           else
             mkdir -p simple-lead-time-action
-            echo "## simple-lead-time-action history\n\n| Release Date | Lead Time |\n| ---- | ---- |" >> simple-lead-time-action/README.md
+            echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
+            echo "" >> simple-lead-time-action/README.md
+            echo "| Release Date | Lead Time |" >> simple-lead-time-action/README.md
+            echo "| ---- | ---- |" >> simple-lead-time-action/README.md
           fi
           echo "| $(date +'%Y-%m-%d %H:%M') | ${{ steps.lead-time.outputs.lead-time }} |" >> simple-lead-time-action/README.md
 
