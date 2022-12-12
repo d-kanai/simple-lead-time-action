@@ -1,0 +1,15 @@
+name: JS Actions
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  action:
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: ha-ha
+        uses: ./.github/actions/lead-time-action
