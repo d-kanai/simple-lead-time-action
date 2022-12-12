@@ -21,7 +21,7 @@ jobs:
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
       - name: write history file
         run: |
-          mkdir simple-lead-time-action
+          mkdir -p simple-lead-time-action
           echo "| $(date +'%Y-%m-%d %H:%M') | ${{ steps.lead-time.outputs.lead-time }} |" >> simple-lead-time-action/README.md
       - name: Commit & Push
         uses: actions-js/push@v1.3
