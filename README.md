@@ -19,7 +19,7 @@ so that
 
 <br/>
 
-## *:clock10: Example of result
+## :four_leaf_clover: Example of result
 ![image](https://user-images.githubusercontent.com/97098139/207061911-939e415e-8845-444f-af99-23c16ad3a1fc.png)
 
 
