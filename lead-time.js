@@ -4,10 +4,9 @@ const { graphql } = require('@octokit/graphql');
 const query = `query LastPullRequestToMain {
 search(
   last: 1
-  query: "repo:${process.env.REPOSITORY_NAME} is:pr base:${process.env.PR_BRANCH_TO} head:${process.env.PR_BRANCH_FROM}"
+  query: "repo:${process.env.REPOSITORY_NAME} is:pr base:${process.env.RELEASE_BRANCH_NAME} is:closed"
   type: ISSUE
 ) {
-    issueCount
     nodes {
     ... on PullRequest {
         title
@@ -40,11 +39,8 @@ async function getLeadTime() {
   if(!process.env.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API) {
     throw Error("it need to set env var 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
   }
-  if(!process.env.PR_BRANCH_TO) {
-    throw Error("it need to set env var 'PR_BRANCH_TO'")
-  }
-  if(!process.env.PR_BRANCH_FROM) {
-    throw Error("it need to set env var 'PR_BRANCH_FROM'")
+  if(!process.env.RELEASE_BRANCH_NAME) {
+    throw Error("it need to set env var 'RELEASE_BRANCH_NAME'")
   }
   if(!process.env.REPOSITORY_NAME) {
     throw Error("it need to set env var 'REPOSITORY_NAME'")
@@ -53,6 +49,8 @@ async function getLeadTime() {
   try {
     console.log("call Github Graphql Query: ", query)
     res = await graphqlWithAuth(query);
+    console.dir("Github Graphql Query Response")
+    console.dir(res, {depth: null})
   } catch(e) {
     throw Error("Bad Credential 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
   }

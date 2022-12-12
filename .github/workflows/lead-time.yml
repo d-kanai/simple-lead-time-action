@@ -15,8 +15,7 @@ jobs:
         uses: d-kanai/lead-time-action@main
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
-          PR_BRANCH_TO: main
-          PR_BRANCH_FROM: stg
+          RELEASE_BRANCH_NAME: main
           REPOSITORY_NAME: ${{github.repository}}
       - name: show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
