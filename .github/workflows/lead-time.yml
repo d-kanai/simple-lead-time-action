@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Find Lead Time
         id: lead-time
         uses: d-kanai/lead-time-action@main
@@ -17,13 +18,21 @@ jobs:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           RELEASE_BRANCH_NAME: main
           REPOSITORY_NAME: ${{github.repository}}
-      - name: show lead-time output
+
+      - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
-      - name: write history file
+
+      - name: Write history file
         run: |
-          mkdir -p simple-lead-time-action
+          if [ -d "simple-lead-time-action" ]; then
+            echo 'skip init file'
+          else
+            mkdir -p simple-lead-time-action
+            echo "## simple-lead-time-action history\n\n| Release Date | Lead Time |\n| ---- | ---- |" >> simple-lead-time-action/README.md
+          fi
           echo "| $(date +'%Y-%m-%d %H:%M') | ${{ steps.lead-time.outputs.lead-time }} |" >> simple-lead-time-action/README.md
-      - name: Commit & Push
+
+      - name: Commit & Push History file
         uses: actions-js/push@v1.3
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API }}
