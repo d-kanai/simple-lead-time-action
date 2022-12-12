@@ -15,5 +15,7 @@ jobs:
         uses: ./.github/actions/lead-time-action
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
+          PR_BRANCH_TO: main
+          PR_BRANCH_FROM: stg
       - name: show
         run: echo "${{ steps.lead-time.outputs.lead-time }}"

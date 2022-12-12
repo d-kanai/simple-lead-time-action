@@ -4,7 +4,7 @@ const { graphql } = require('@octokit/graphql');
 const query = `query LastPullRequestToMain {
 search(
   last: 1
-  query: "repo:aisaac-lab/eltea is:pr base:main head:stg"
+  query: "repo:aisaac-lab/eltea is:pr base:${process.env.PR_BRANCH_TO} head:${process.env.PR_BRANCH_FROM}"
   type: ISSUE
 ) {
     issueCount
