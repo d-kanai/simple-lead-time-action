@@ -14,6 +14,7 @@ it's like lead-time in one of Four keys
 
 so that
 <br/>
+<br/>
 
 ### *:clock10: Lead Time = PR merged date - PR first commited date*
 
