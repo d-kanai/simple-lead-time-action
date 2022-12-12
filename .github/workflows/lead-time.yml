@@ -16,7 +16,7 @@ jobs:
       - name: Commit & Push
         uses: actions-js/push@v1.3
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API }}
           message: "update by simple-lead-time-action"
           author_email: "simple-lead-time-action"
           author_name: "simple-lead-time-action"
