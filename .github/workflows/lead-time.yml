@@ -13,7 +13,7 @@ jobs:
       - name: Find Lead Time
         id: lead-time
         #uses: ./.
-        uses: d-kanai/lead-time-action@main
+        uses: d-kanai/lead-time-action@v1.0.2
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           PR_BRANCH_TO: main
