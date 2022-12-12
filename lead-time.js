@@ -50,8 +50,8 @@ async function getLeadTime() {
     throw Error("it need to set env var 'REPOSITORY_NAME'")
   }
   let res
-  console.log("call Github Graphql Query: query)
   try {
+    console.log("call Github Graphql Query: ", query)
     res = await graphqlWithAuth(query);
   } catch(e) {
     throw Error("Bad Credential 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
