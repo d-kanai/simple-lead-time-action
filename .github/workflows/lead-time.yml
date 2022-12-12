@@ -12,5 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: ha-ha
+      - name: Find Lead Time
+        id: lead-time
         uses: ./.github/actions/lead-time-action
+      - name: show
+        run: echo "${{ steps.lead-time.outputs.lead-time }}"
