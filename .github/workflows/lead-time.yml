@@ -6,9 +6,11 @@ on:
       - main
 
 jobs:
-  action:
+  lead-time:
     runs-on: ubuntu-latest
     steps:
+      - name: show
+        run: echo "${GITHUB_REPOSITORY}"
       - uses: actions/checkout@v3
       - name: Find Lead Time
         id: lead-time
@@ -17,5 +19,6 @@ jobs:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           PR_BRANCH_TO: main
           PR_BRANCH_FROM: stg
+          REPOSITORY_NAME: ${GITHUB_REPOSITORY}
       - name: show
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
