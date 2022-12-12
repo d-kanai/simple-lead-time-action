@@ -1,0 +1,11 @@
+name: "lead tiem action"
+
+description: "use an Github Graphql API to calc Lead Time"
+
+outputs:
+  lead-time-output:
+    description: lead-time
+
+runs:
+  using: "node12"
+  main: "main.js"
