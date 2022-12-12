@@ -9,13 +9,11 @@ jobs:
   lead-time:
     runs-on: ubuntu-latest
     steps:
-      - name: show
-        run: echo "${GITHUB_REPOSITORY}"
       - uses: actions/checkout@v3
       - name: Find Lead Time
         id: lead-time
-        uses: ./.
-        #        uses: d-kanai/lead-time-action@main
+        #uses: ./.
+        uses: d-kanai/lead-time-action@main
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           PR_BRANCH_TO: main
