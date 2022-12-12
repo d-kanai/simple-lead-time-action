@@ -54,3 +54,4 @@ this action usualy trigger by "release" brnach push.
 ## :four_leaf_clover: Env variables
 
 you can set FROM => TO branch name by env variables liek above example code.
+
