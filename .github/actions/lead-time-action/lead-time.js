@@ -40,6 +40,15 @@ async function getLeadTime() {
   if(!process.env.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API) {
     throw Error("it need to set env var 'PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API'")
   }
+  if(!process.env.PR_BRANCH_TO) {
+    throw Error("it need to set env var 'PR_BRANCH_TO'")
+  }
+  if(!process.env.PR_BRANCH_FROM) {
+    throw Error("it need to set env var 'PR_BRANCH_FROM'")
+  }
+  if(!process.env.REPOSITORY_NAME) {
+    throw Error("it need to set env var 'REPOSITORY_NAME'")
+  }
   let res
   try {
     res = await graphqlWithAuth(query);
