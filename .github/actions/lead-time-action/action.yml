@@ -1,10 +1,10 @@
 name: "lead tiem action"
 
-description: "use an external API to retrieve and display a joke"
+description: "use an Github Graphql API to calc Lead Time"
 
 outputs:
   lead-time-output:
-    description: The resulting joke from the icanhazdadjokes API
+    description: lead-time
 
 runs:
   using: "node12"
