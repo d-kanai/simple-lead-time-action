@@ -2,15 +2,15 @@
 
 ## :four_leaf_clover: Motivation
 
-we would like to know how long take time until release our commited code.
+How long take time until release our commited code?
 
 it's like lead-time in one of Four keys
 
 ## :four_leaf_clover: Definition of lead-time
 
-- we have "release" branch
-- we have "devlelop" branch
-- we merge "develop" => "release" branch by PR when we deploy to production as usual
+- you have "release" branch
+- you have "devlelop" branch
+- you merge "develop" => "release" branch by PR when we deploy to production as usual
 
 so that
 <br/>
