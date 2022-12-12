@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Find Lead Time
         id: lead-time
-        uses: d-kanai/lead-time-action@main
+        uses: d-kanai/simple-lead-time-action@main
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           PR_BRANCH_TO: release
