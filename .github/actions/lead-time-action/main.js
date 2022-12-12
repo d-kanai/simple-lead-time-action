@@ -1,10 +1,10 @@
-const getJoke = require("./joke");
+const getLeadTime = require("./lead-time");
 const core = require("@actions/core");
 
 async function run() {
-  const joke = await getJoke();
-  console.log(joke);
-  core.setOutput("joke-output", joke);
+  const result = await getLeadTime();
+  console.log(result);
+  core.setOutput("lead-time", result);
 }
 
 run();
