@@ -49,8 +49,8 @@ jobs:
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
 ```
 
-this action usualy trigger by "release" brnach push.
+this action usualy trigger by "release" branch push.
 
 ## :four_leaf_clover: Env variables
 
-you can set FROM => TO branch name by env variables liek above example code.
+you can set FROM => TO branch name by env variables like above example code.
