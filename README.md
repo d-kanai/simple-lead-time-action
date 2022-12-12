@@ -12,14 +12,14 @@ it's like lead-time in one of Four keys
 - we have "devlelop" branch
 - we merge "develop" => "release" branch by PR when we deploy to production as usual
 
-so that 
+so that
 <br/>
 
 ### *:clock10: Lead Time = PR merged date - PR first commited date*
 
 <br/>
 
-## :four_leaf_clover: example action code
+## :four_leaf_clover: Example action code
 
 ```
 on:
@@ -46,6 +46,6 @@ jobs:
 
 this action usualy trigger by "release" brnach push.
 
-## :four_leaf_clover: env variables
+## :four_leaf_clover: Env variables
 
 you can set FROM => TO branch name by env variables liek above example code.
