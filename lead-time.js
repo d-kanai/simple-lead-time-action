@@ -50,7 +50,7 @@ async function getLeadTime() {
     throw Error("it need to set env var 'REPOSITORY_NAME'")
   }
   let res
-  console.log(query)
+  console.log("call Github Graphql Query: query)
   try {
     res = await graphqlWithAuth(query);
   } catch(e) {
