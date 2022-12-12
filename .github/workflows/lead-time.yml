@@ -3,7 +3,7 @@ name: Lead Time
 on:
   push:
     branches:
-      - change
+      - main
 
 jobs:
   lead-time:
@@ -42,5 +42,5 @@ jobs:
           message: "auto commit by simple-lead-time-action"
           author_email: "simple-lead-time-action"
           author_name: "simple-lead-time-action"
-          branch: change
+          branch: main
 
