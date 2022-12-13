@@ -13,34 +13,14 @@ jobs:
 
       - name: Find Lead Time
         id: lead-time
-        uses: d-kanai/lead-time-action@main
+        uses: d-kanai/lead-time-action@develop
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
-          RELEASE_BRANCH_NAME: main
           REPOSITORY_NAME: ${{github.repository}}
+          ENABLE_SAVE_HISTORY_FILE: true
+          GITHUB_USER: d-kanai
+          RELEASE_BRANCH_NAME: main
+          SAVE_HISTORY_FILE_BRANCH: main
 
       - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
-
-      - name: Write history file
-        run: |
-          if [ -d "simple-lead-time-action" ]; then
-            echo 'skip init file'
-          else
-            mkdir -p simple-lead-time-action
-            echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
-            echo "" >> simple-lead-time-action/README.md
-            echo "| Release Date | Lead Time |" >> simple-lead-time-action/README.md
-            echo "| ---- | ---- |" >> simple-lead-time-action/README.md
-          fi
-          echo "| $(date +'%Y-%m-%d %H:%M') | ${{ steps.lead-time.outputs.lead-time }} |" >> simple-lead-time-action/README.md
-
-      - name: Commit & Push History file
-        uses: actions-js/push@v1.3
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API }}
-          message: "auto commit by simple-lead-time-action"
-          author_email: "simple-lead-time-action"
-          author_name: "simple-lead-time-action"
-          branch: main
-
