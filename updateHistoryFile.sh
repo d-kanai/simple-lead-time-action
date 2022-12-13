@@ -22,10 +22,8 @@ remote_repo="https://${GITHUB_USER}:${PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}@gith
 git config http.sslVerify false
 git config --local user.email "simple-lead-time-action"
 git config --local user.name "simple-lead-time-action"
-git config pull.rebase false
 git add -A
 git commit -m "auto commit by simple-lead-time-action"
 echo 'git commited'
-git pull origin ${SAVE_HISTORY_FILE_BRANCH}
-git push "${remote_repo}" HEAD:"${SAVE_HISTORY_FILE_BRANCH}" --follow-tags;
+git push "${remote_repo}" HEAD:"${SAVE_HISTORY_FILE_BRANCH}";
 echo 'git pushed'
