@@ -1,5 +1,16 @@
-const request = require("request-promise");
 const { graphql } = require('@octokit/graphql');
+const { exec } = require('child_process')
+
+function commit() {
+  exec('sh commit.sh', (err, stdout, stderr) => {
+      if (err) {
+        console.log(`stderr: ${stderr}`)
+        return
+      }
+      console.log(`stdout: ${stdout}`)
+    }
+  )
+}
 
 const query = `query LastPullRequestToMain {
 search(
@@ -58,7 +69,9 @@ async function getLeadTime() {
   const firstCommitDate = new Date(res.search.nodes[0].commits.edges[0].node.commit.committedDate);
   const leadTimeHours = (closedDate - firstCommitDate) / 1000 / 60 / 60;
   const result = leadTimeHours.toString().substring(0, 3) + 'h'
+  commit()
   return result
 }
 
 module.exports = getLeadTime;
+
