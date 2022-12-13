@@ -1,8 +1,8 @@
 const { graphql } = require('@octokit/graphql');
 const { exec } = require('child_process')
 
-function commit() {
-  exec('sh commit.sh', (err, stdout, stderr) => {
+function updateHistoryFile(leadTime) {
+  exec(`sh commit.sh ${leadTime}`, (err, stdout, stderr) => {
       if (err) {
         console.log(`stderr: ${stderr}`)
         return
@@ -69,7 +69,7 @@ async function getLeadTime() {
   const firstCommitDate = new Date(res.search.nodes[0].commits.edges[0].node.commit.committedDate);
   const leadTimeHours = (closedDate - firstCommitDate) / 1000 / 60 / 60;
   const result = leadTimeHours.toString().substring(0, 3) + 'h'
-  commit()
+  updateHistoryFile(result)
   return result
 }
 

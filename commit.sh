@@ -1,6 +1,21 @@
 #!/bin/sh
 set -e
 
+LEAD_TIME=$1
+
+if [ -d "simple-lead-time-action" ]; then
+  echo 'skip init file'
+else
+  mkdir -p simple-lead-time-action
+  echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
+  echo "" >> simple-lead-time-action/README.md
+  echo "| :four_leaf_clover: Release Date | :clock10: Lead Time |" >> simple-lead-time-action/README.md
+  echo "| ---- | ---- |" >> simple-lead-time-action/README.md
+fi
+
+echo "| `date +'%Y-%m-%d %H:%M'` | $LEAD_TIME |" >> simple-lead-time-action/README.md
+
+
 remote_repo="https://${GITHUB_USER}:${PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}@github.com/${REPOSITORY_NAME}.git"
 
 git config http.sslVerify false

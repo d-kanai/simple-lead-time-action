@@ -1,5 +1,6 @@
 ## simple-lead-time-action history
 
-| Release Date | Lead Time |
+| :four_leaf_clover: Release Date | :clock10: Lead Time |
 | ---- | ---- |
-| 2022-12-12 22:47 | 0.0h |
+| 2022-12-13 13:34 | 10h |
+| 2022-12-13 13:34 | 6.0h |
