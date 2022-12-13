@@ -25,6 +25,7 @@ else
   echo 'init history data file'
   mkdir -p simple-lead-time-action
   echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
+  echo "[See Document - simple-lead-time-action](https://github.com/marketplace/actions/simple-lead-time-action)" >> simple-lead-time-action/README.md
   echo "" >> simple-lead-time-action/README.md
   echo "| :four_leaf_clover: Release Date | :clock10: Lead Time | PR Link |" >> simple-lead-time-action/README.md
   echo "| ---- | ---- | ---- |" >> simple-lead-time-action/README.md
