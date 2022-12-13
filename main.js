@@ -2,8 +2,8 @@ const getLeadTime = require("./lead-time");
 const { exec } = require('child_process')
 const core = require("@actions/core");
 
-function updateHistoryFile(leadTime) {
-  exec(`sh updateHistoryFile.sh ${leadTime}`, (err, stdout, stderr) => {
+function updateHistoryFile(leadTime, prLink) {
+  exec(`sh updateHistoryFile.sh ${leadTime} ${prLink}`, (err, stdout, stderr) => {
       if (err) {
         console.log(`stderr: ${stderr}`)
         return
@@ -20,9 +20,9 @@ async function run() {
   } catch(e) {
     core.setFailed(e.message);
   }
-  console.log(`🕑 lead time: ${result}`);
-  core.setOutput("lead-time", result);
-  updateHistoryFile(result)
+  console.log(`🕑 lead time: ${result.leadTime}`);
+  core.setOutput("lead-time", result.leadTime);
+  updateHistoryFile(result.leadTime, result.prLink)
 }
 
 run();
