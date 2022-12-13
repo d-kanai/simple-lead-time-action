@@ -5,8 +5,8 @@ LEAD_TIME=$1
 PR_LINK=$2
 
 not_exist_branch=$(git ls-remote --heads origin ${SAVE_HISTORY_FILE_BRANCH})
-
 if [[ -z ${not_exist_branch} ]]; then
+#  git branch -d ${SAVE_HISTORY_FILE_BRANCH}
   git branch ${SAVE_HISTORY_FILE_BRANCH}
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
   git push --set-upstream origin ${SAVE_HISTORY_FILE_BRANCH}
