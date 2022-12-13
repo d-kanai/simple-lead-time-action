@@ -1,9 +1,11 @@
 const getLeadTime = require("./lead-time");
 const { exec } = require('child_process')
 const core = require("@actions/core");
+const path = require("path");
 
 function updateHistoryFile(leadTime, prLink) {
-  exec(`sh updateHistoryFile.sh ${leadTime} ${prLink}`, (err, stdout, stderr) => {
+  const filePath = [path.join(__dirname, './updateHistoryFile.sh')][0]
+  exec(`sh ${filePath} ${leadTime} ${prLink}`, (err, stdout, stderr) => {
       if (err) {
         console.log(`stderr: ${stderr}`)
         return
