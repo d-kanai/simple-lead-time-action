@@ -39,3 +39,4 @@ git commit -m "auto commit by simple-lead-time-action"
 echo 'git commited'
 git push "${remote_repo}" HEAD:"${SAVE_HISTORY_FILE_BRANCH}" --force;
 echo 'git pushed'
+git pull
