@@ -22,7 +22,9 @@ async function run() {
   }
   console.log(`🕑 lead time: ${result.leadTime}`);
   core.setOutput("lead-time", result.leadTime);
-  updateHistoryFile(result.leadTime, result.prLink)
+  if(process.env.ENABLE_SAVE_HISTORY_FILE == 'true') {
+    updateHistoryFile(result.leadTime, result.prLink)
+  }
 }
 
 run();

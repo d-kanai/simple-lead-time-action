@@ -3,7 +3,7 @@ name: Lead Time
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   lead-time:
@@ -17,6 +17,7 @@ jobs:
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
           REPOSITORY_NAME: ${{github.repository}}
+          ENABLE_SAVE_HISTORY_FILE: true
           GITHUB_USER: d-kanai
           RELEASE_BRANCH_NAME: main
           SAVE_HISTORY_FILE_BRANCH: main
