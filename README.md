@@ -12,7 +12,6 @@ it's like lead-time in one of Four keys
 - you have "devlelop" branch
 - you merge "develop" => "release" branch by PR when we deploy to production as usual
 
-so that
 <br/>
 <br/>
 

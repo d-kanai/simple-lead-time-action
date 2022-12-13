@@ -3,6 +3,7 @@ set -e
 
 LEAD_TIME=$1
 PR_LINK=$2
+SAVE_HISTORY_FILE_BRANCH="simple-lead-time-action"
 
 branch_count=`git ls-remote --heads origin ${SAVE_HISTORY_FILE_BRANCH} | wc -l | tr -d ' '`
 
@@ -12,14 +13,16 @@ if [ "0" = "$branch_count" ]; then
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
   git push --set-upstream origin ${SAVE_HISTORY_FILE_BRANCH}
 else
+  echo 'skip branch'
   git pull
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
 fi
 git branch
 
 if [ -d "simple-lead-time-action" ]; then
-  echo 'skip init file'
+  echo 'skip init history data file'
 else
+  echo 'init history data file'
   mkdir -p simple-lead-time-action
   echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
   echo "" >> simple-lead-time-action/README.md
