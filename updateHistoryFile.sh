@@ -15,6 +15,7 @@ else
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
 fi
 git branch
+exit 0
 
 if [ -d "simple-lead-time-action" ]; then
   echo 'skip init file'
