@@ -4,7 +4,7 @@
 
 How long take time until release our commited code?
 
-it's like lead-time in one of Four keys
+it's like lead-time in one of Four Keys
 
 ## :four_leaf_clover: Definition of lead-time
 
@@ -23,14 +23,15 @@ it's like lead-time in one of Four keys
 
 this PR code spent "6 hours" until deliver to prodcution.
 
-## :four_leaf_clover: Save and Show history file to "simple-lead-time-action" as markdown file.
+## :four_leaf_clover: Save and Show history file to branch "simple-lead-time-action" as markdown file.
 
 - "simple-lead-time-action" branch create automatically when first trigger
 - adding new record when each trigger
-- you can disable this feature if don't need it. 
-  ENABLE_SAVE_HISTORY_FILE=false
 
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/97098139/207301622-326497e6-8e2a-4f76-be19-5daaf499036e.png">
+
+- you can disable this feature if don't need it. 
+  ENABLE_SAVE_HISTORY_FILE=false
 
 ## :four_leaf_clover: You can get history file link from output value
 
