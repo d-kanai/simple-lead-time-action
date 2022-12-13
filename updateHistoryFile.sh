@@ -6,7 +6,7 @@ PR_LINK=$2
 
 branch_count=`git ls-remote --heads origin ${SAVE_HISTORY_FILE_BRANCH} | wc -l | tr -d ' '`
 
-if [ "X0" == "X$branch_count" ]; then
+if [ "0" = "$branch_count" ]; then
   echo 'init branch'
   git branch ${SAVE_HISTORY_FILE_BRANCH}
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
