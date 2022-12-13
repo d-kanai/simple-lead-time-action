@@ -3,8 +3,6 @@ const { exec } = require('child_process')
 const core = require("@actions/core");
 
 function updateHistoryFile(leadTime, prLink) {
-  console.log(`sh updateHistoryFile.sh ${leadTime} ${prLink}`)
-  console.log(process.env.SAVE_HISTORY_FILE_BRANCH)
   exec(`sh updateHistoryFile.sh ${leadTime} ${prLink}`, (err, stdout, stderr) => {
       if (err) {
         console.log(`stderr: ${stderr}`)
