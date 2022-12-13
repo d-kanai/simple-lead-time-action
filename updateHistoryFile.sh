@@ -26,5 +26,5 @@ git add -A
 git commit -m "auto commit by simple-lead-time-action"
 echo 'git commited'
 git pull
-git push "${remote_repo}" HEAD:"${SAVE_HISTORY_FILE_BRANCH}";
+git push "${remote_repo}" HEAD:"${SAVE_HISTORY_FILE_BRANCH}" --follow-tags;
 echo 'git pushed'
