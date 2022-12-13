@@ -29,7 +29,6 @@ fi
 
 echo "| `date +'%Y-%m-%d %H:%M'` | $LEAD_TIME | [PR Link]($PR_LINK) |" >> simple-lead-time-action/README.md
 
-
 remote_repo="https://${GITHUB_USER}:${PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}@github.com/${REPOSITORY_NAME}.git"
 
 git config http.sslVerify false
