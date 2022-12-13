@@ -12,8 +12,6 @@ it's like lead-time in one of Four keys
 - you have "devlelop" branch
 - you merge "develop" => "release" branch by PR when we deploy to production as usual
 
-so that
-<br/>
 <br/>
 
 ### *:clock10: Lead Time = PR merged date - PR first commited date*
@@ -31,28 +29,34 @@ this PR code spent "6 hours" until deliver to prodcution.
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   lead-time:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Find Lead Time
         id: lead-time
-        uses: d-kanai/simple-lead-time-action@v1.0.9
+        uses: d-kanai/lead-time-action@develop
         env:
           PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API: ${{secrets.PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}}
-          PR_BRANCH_TO: release
-          PR_BRANCH_FROM: develop
           REPOSITORY_NAME: ${{github.repository}}
-      - name: show lead-time output
+          ENABLE_SAVE_HISTORY_FILE: true
+          GITHUB_USER: d-kanai
+          RELEASE_BRANCH_NAME: main
+
+      - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
+
+      - name: Show history-link output
+        run: echo "${{ steps.lead-time.outputs.history-link }}"
 ```
 
 this action usualy trigger by "release" branch push.
 
 ## :four_leaf_clover: Env variables
 
-
 you can set FROM => TO branch name by env variables liek above example code.
+

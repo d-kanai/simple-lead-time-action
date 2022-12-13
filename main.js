@@ -29,11 +29,8 @@ async function run() {
     if(!process.env.RELEASE_BRANCH_NAME) {
       throw Error("it need to set env var 'RELEASE_BRANCH_NAME'")
     }
-    if(!process.env.SAVE_HISTORY_FILE_BRANCH) {
-      throw Error("it need to set env var 'SAVE_HISTORY_FILE_BRANCH'")
-    }
     updateHistoryFile(result.leadTime, result.prLink)
-    core.setOutput("history-link", `https://github.com/${process.env.REPOSITORY_NAME}/tree/${process.env.SAVE_HISTORY_FILE_BRANCH}/simple-lead-time-action`);
+    core.setOutput("history-link", `https://github.com/${process.env.REPOSITORY_NAME}/tree/simple-lead-time-action/simple-lead-time-action`);
   }
 }
 
