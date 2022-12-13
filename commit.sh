@@ -1,8 +1,7 @@
 #!/bin/sh
 set -e
 
-INPUT_BRANCH=${INPUT_BRANCH}
-remote_repo="https://${GITHUB_USER}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY_NAME}.git"
+remote_repo="https://${GITHUB_USER}:${PERSONAL_ACCESS_TOKEN_FOR_GITHUB_API}@github.com/${REPOSITORY_NAME}.git"
 
 git config http.sslVerify false
 git config --local user.email "simple-lead-time-action"
