@@ -33,7 +33,7 @@ async function run() {
       throw Error("it need to set env var 'SAVE_HISTORY_FILE_BRANCH'")
     }
     updateHistoryFile(result.leadTime, result.prLink)
-    core.setOutput("history-link", `https://github.com/${REPOSITORY_NAME}/tree/${SAVE_HISTORY_FILE_BRANCH}/simple-lead-time-action`);
+    core.setOutput("history-link", `https://github.com/${process.env.REPOSITORY_NAME}/tree/${process.env.SAVE_HISTORY_FILE_BRANCH}/simple-lead-time-action`);
   }
 }
 
