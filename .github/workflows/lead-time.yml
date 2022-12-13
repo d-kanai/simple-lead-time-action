@@ -25,5 +25,5 @@ jobs:
       - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
 
-      - name: Show history-link output
-        run: echo "${{ steps.lead-time.outputs.history-link }}"
+        #      - name: Show history-link output
+        #        run: echo "${{ steps.lead-time.outputs.history-link }}"
