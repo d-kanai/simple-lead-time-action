@@ -2,8 +2,7 @@
 set -e
 
 INPUT_BRANCH=${INPUT_BRANCH}
-REPOSITORY=${INPUT_REPOSITORY:-$GITHUB_REPOSITORY}
-remote_repo="https://${GITHUB_USER}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+remote_repo="https://${GITHUB_USER}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY_NAME}.git"
 
 git config http.sslVerify false
 git config --local user.email "simple-lead-time-action"
