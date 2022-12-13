@@ -20,6 +20,7 @@ if [ -d "simple-lead-time-action" ]; then
   echo 'skip init file'
 else
   mkdir -p simple-lead-time-action
+  exit 0
   echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
   echo "" >> simple-lead-time-action/README.md
   echo "| :four_leaf_clover: Release Date | :clock10: Lead Time | PR Link |" >> simple-lead-time-action/README.md
