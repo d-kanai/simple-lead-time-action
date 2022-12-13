@@ -12,6 +12,7 @@ if [ "0" = "$branch_count" ]; then
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
   git push --set-upstream origin ${SAVE_HISTORY_FILE_BRANCH}
 else
+  exit 0
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
 fi
 git branch
