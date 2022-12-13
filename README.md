@@ -32,6 +32,9 @@ this PR code spent "6 hours" until deliver to prodcution.
 
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/97098139/207301622-326497e6-8e2a-4f76-be19-5daaf499036e.png">
 
+## :four_leaf_clover: You can get history file link from output value
+
+<img width="938" alt="image" src="https://user-images.githubusercontent.com/97098139/207302998-67e4b243-312d-4045-9a92-50952cbab053.png">
 
 ## :four_leaf_clover: Example action code
 
@@ -65,8 +68,4 @@ jobs:
 ```
 
 this action usualy trigger by "release" branch push.
-
-## :four_leaf_clover: Env variables
-
-you can set FROM => TO branch name by env variables liek above example code.
 
