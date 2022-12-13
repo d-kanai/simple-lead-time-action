@@ -20,7 +20,8 @@ jobs:
           ENABLE_SAVE_HISTORY_FILE: true
           GITHUB_USER: d-kanai
           RELEASE_BRANCH_NAME: main
-          SAVE_HISTORY_FILE_BRANCH: simple-lead-time-action
+          SAVE_HISTORY_FILE_BRANCH: develop
 
       - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
+        run: echo "${{ steps.lead-time.outputs.history-link }}"
