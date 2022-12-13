@@ -3,4 +3,3 @@
 
 | :four_leaf_clover: Release Date | :clock10: Lead Time | PR Link |
 | ---- | ---- | ---- |
-| 2022-12-13 14:54 | 0.6h | [PR Link](https://github.com/d-kanai/simple-lead-time-action/pull/2) |
