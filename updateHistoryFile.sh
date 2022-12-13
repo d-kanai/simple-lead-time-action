@@ -4,6 +4,12 @@ set -e
 LEAD_TIME=$1
 PR_LINK=$2
 
+git branch -d ${SAVE_HISTORY_FILE_BRANCH}
+git branch ${SAVE_HISTORY_FILE_BRANCH}
+git checkout ${SAVE_HISTORY_FILE_BRANCH}
+git push --set-upstream origin ${SAVE_HISTORY_FILE_BRANCH}
+git branch
+
 if [ -d "simple-lead-time-action" ]; then
   echo 'skip init file'
 else
