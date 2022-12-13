@@ -16,12 +16,10 @@ else
   git checkout ${SAVE_HISTORY_FILE_BRANCH}
 fi
 git branch
-exit 0
 
 if [ -d "simple-lead-time-action" ]; then
   echo 'skip init file'
 else
-  exit 0
   mkdir -p simple-lead-time-action
   echo "## simple-lead-time-action history" >> simple-lead-time-action/README.md
   echo "" >> simple-lead-time-action/README.md
