@@ -7,3 +7,4 @@
 | 2022-12-13 15:46 | 6.9h | [PR Link](https://github.com/d-kanai/simple-lead-time-action/pull/4) |
 | 2022-12-13 15:46 | 6.9h | [PR Link](https://github.com/d-kanai/simple-lead-time-action/pull/4) |
 | 2022-12-13 15:49 | 0.0h | [PR Link](https://github.com/d-kanai/simple-lead-time-action/pull/6) |
+| 2022-12-13 15:50 | 0.0h | [PR Link](https://github.com/d-kanai/simple-lead-time-action/pull/6) |
