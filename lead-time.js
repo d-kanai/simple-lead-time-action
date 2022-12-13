@@ -2,7 +2,7 @@ const { graphql } = require('@octokit/graphql');
 const { exec } = require('child_process')
 
 function updateHistoryFile(leadTime) {
-  exec(`sh commit.sh ${leadTime}`, (err, stdout, stderr) => {
+  exec(`sh updateHistoryFile.sh ${leadTime}`, (err, stdout, stderr) => {
       if (err) {
         console.log(`stderr: ${stderr}`)
         return
