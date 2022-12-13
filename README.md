@@ -13,7 +13,6 @@ it's like lead-time in one of Four keys
 - you merge "develop" => "release" branch by PR when we deploy to production as usual
 
 <br/>
-<br/>
 
 ### *:clock10: Lead Time = PR merged date - PR first commited date*
 
