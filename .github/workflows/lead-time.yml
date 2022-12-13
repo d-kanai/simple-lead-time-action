@@ -3,7 +3,7 @@ name: Lead Time
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   lead-time:
@@ -19,7 +19,7 @@ jobs:
           REPOSITORY_NAME: ${{github.repository}}
           GITHUB_USER: d-kanai
           RELEASE_BRANCH_NAME: main
-          SAVE_HISTORY_FILE_BRANCH: develop
+          SAVE_HISTORY_FILE_BRANCH: main
 
       - name: Show lead-time output
         run: echo "${{ steps.lead-time.outputs.lead-time }}"
